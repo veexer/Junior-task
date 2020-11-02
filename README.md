@@ -9,8 +9,6 @@ Simply run `npm i` in the project directory.
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
 Explanation of how the app was developed(accurate to the development timeline):
 1. Slide.js - reusable image component rendering based on prop 'slide_id' - rendering image based on the prop
@@ -25,4 +23,4 @@ implemented link from React Router
 6. FetchComponent.js - created getData function calling GitHub API, profile picture url added to local storage, executed on componentDidMount();
 added conditional rendering based on in the local storage data (whether picture url is available) and added a placeholder (getData is on setTimeout 1000 so that you can see the doggo),
 added <h1> welcoming the user based on component state
-- added FetchGit component from FetchComponent.js to my.profile.js to render alongside the header
+added FetchGit component from FetchComponent.js to my.profile.js to render alongside the header
