@@ -22,5 +22,5 @@ implemented link from React Router
 5. Index.js - added BrowserRouter, Switch and Route from React router to allow accessing my-profile via url /my-profile
 6. FetchComponent.js - created getData function calling GitHub API, profile picture url added to local storage, executed on componentDidMount();
 added conditional rendering based on in the local storage data (whether picture url is available) and added a placeholder (getData is on setTimeout 1000 so that you can see the doggo),
-added <h1> welcoming the user based on component state
+added an element welcoming the user based on component state
 added FetchGit component from FetchComponent.js to my.profile.js to render alongside the header
