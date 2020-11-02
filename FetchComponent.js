@@ -7,7 +7,6 @@ export class FetchGit extends Component {
         super(props)
         this.state = {
             name: 'Veexer',
-            img: 'https://www.dictionary.com/e/wp-content/uploads/2018/05/doggo-300x300.jpg'
         }
     }
     getData() {
@@ -15,21 +14,21 @@ export class FetchGit extends Component {
             console.log('Our data is fetched');
             fetch('https://api.github.com/users/veexer')
                 .then(response => response.json())
-                .then(data => this.setState({ img: data.avatar_url }))
+                .then(data => this.setState({imgurl: data.avatar_url}));
             this.setState({
-                data: 'fetched',
+                data: 'fetched'
             })
         }, 1000)
     }
-    async componentWillMount() {
+    async componentDidMount() {
         this.getData();
     }
     render() {
         let name = this.state.name;
-        let imgaddress = this.state.img;
-        let fetchCheck = this.state.data;
+        let imgaddress = this.state.imgurl;
+        let fetch = this.state.data;
         let isFetched;
-        if (imgaddress != null && imgaddress != undefined && fetchCheck === 'fetched') {
+        if (imgaddress != null && imgaddress != undefined && fetch === 'fetched') {
             isFetched = <img src={`${imgaddress}.jpg`} style={{ marginLeft: '5vw', width: '300px', height: '300px' }} alt='GitHub picture' />
         } else {
             isFetched = <img src={`https://www.dictionary.com/e/wp-content/uploads/2018/05/doggo-300x300.jpg`} style={{ marginLeft: '5vw' }} alt='GitHub picture' />
@@ -42,4 +41,3 @@ export class FetchGit extends Component {
         );
     }
 }
-
